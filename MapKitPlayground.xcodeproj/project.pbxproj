@@ -15,6 +15,10 @@
 		8B26700A2666C0CE005FFBB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2670082666C0CE005FFBB0 /* LaunchScreen.storyboard */; };
 		8B2670152666C0CE005FFBB0 /* MapKitPlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2670142666C0CE005FFBB0 /* MapKitPlaygroundTests.swift */; };
 		8B2670202666C0CE005FFBB0 /* MapKitPlaygroundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B26701F2666C0CE005FFBB0 /* MapKitPlaygroundUITests.swift */; };
+		8B26702E26680613005FFBB0 /* FungoMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B26702D26680613005FFBB0 /* FungoMapView.swift */; };
+		8B7C1410267911C70037D9FD /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7C140F267911C70037D9FD /* MapModel.swift */; };
+		8B7C1413267914F70037D9FD /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7C1412267914F70037D9FD /* MapView.swift */; };
+		8B7C14182679222E0037D9FD /* MapElementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7C14172679222E0037D9FD /* MapElementsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		8B26701B2666C0CE005FFBB0 /* MapKitPlaygroundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapKitPlaygroundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B26701F2666C0CE005FFBB0 /* MapKitPlaygroundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitPlaygroundUITests.swift; sourceTree = "<group>"; };
 		8B2670212666C0CE005FFBB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B26702D26680613005FFBB0 /* FungoMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FungoMapView.swift; sourceTree = "<group>"; };
+		8B7C140F267911C70037D9FD /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		8B7C1412267914F70037D9FD /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		8B7C14172679222E0037D9FD /* MapElementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapElementsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +107,11 @@
 		8B266FFC2666C0CB005FFBB0 /* MapKitPlayground */ = {
 			isa = PBXGroup;
 			children = (
+				8B7C140E267909680037D9FD /* Controller */,
+				8B7C140D267909640037D9FD /* View */,
+				8B7C140C2679095D0037D9FD /* Model */,
 				8B266FFD2666C0CB005FFBB0 /* AppDelegate.swift */,
 				8B266FFF2666C0CB005FFBB0 /* SceneDelegate.swift */,
-				8B2670012666C0CB005FFBB0 /* ViewController.swift */,
 				8B2670032666C0CB005FFBB0 /* Main.storyboard */,
 				8B2670062666C0CE005FFBB0 /* Assets.xcassets */,
 				8B2670082666C0CE005FFBB0 /* LaunchScreen.storyboard */,
@@ -126,6 +136,32 @@
 				8B2670212666C0CE005FFBB0 /* Info.plist */,
 			);
 			path = MapKitPlaygroundUITests;
+			sourceTree = "<group>";
+		};
+		8B7C140C2679095D0037D9FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8B7C140F267911C70037D9FD /* MapModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8B7C140D267909640037D9FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B26702D26680613005FFBB0 /* FungoMapView.swift */,
+				8B7C1412267914F70037D9FD /* MapView.swift */,
+				8B7C14172679222E0037D9FD /* MapElementsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B7C140E267909680037D9FD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8B2670012666C0CB005FFBB0 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +295,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B2670022666C0CB005FFBB0 /* ViewController.swift in Sources */,
+				8B7C1413267914F70037D9FD /* MapView.swift in Sources */,
+				8B7C1410267911C70037D9FD /* MapModel.swift in Sources */,
+				8B26702E26680613005FFBB0 /* FungoMapView.swift in Sources */,
 				8B266FFE2666C0CB005FFBB0 /* AppDelegate.swift in Sources */,
+				8B7C14182679222E0037D9FD /* MapElementsView.swift in Sources */,
 				8B2670002666C0CB005FFBB0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
