@@ -41,20 +41,4 @@ class FungoMapView:MKMapView, CLLocationManagerDelegate {
         let region = MKCoordinateRegion.init(center: location.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
         self.setRegion(region, animated: true)
     }
-    
-    
-    
-    // MarcarMapa 
-    //Apagar mapa
-    // MinhaLocalizacao
-    /* Clicar marcacao -> {
-        se Ditancia > x {
-            nao entra
-        } senao {
-            entra
-        }
-     }
-
- 
-    */
 }
