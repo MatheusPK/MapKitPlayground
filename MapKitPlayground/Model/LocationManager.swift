@@ -12,16 +12,16 @@ import MapKit
 
 class LocationManager: CLLocationManager {
     
-    var mapDelegate: MapView!
+    weak var mapDelegate: MapView?
     
     func checkLocationAuthorization() {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
-            mapDelegate.showsUserLocation = true
+            mapDelegate?.showsUserLocation = true
             startUpdatingLocation()
             break
         case .denied:
-            mapDelegate.setUpMapZoomLimits()
+            mapDelegate?.setUpMapZoomLimits()
             break
         case .notDetermined:
             requestWhenInUseAuthorization()

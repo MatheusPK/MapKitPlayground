@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class ViewController: UIViewController {
     
     //private var mapAnnotation: [MapAnnotationModel] = []
     
@@ -21,11 +21,15 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(map)
-        map.setupMapView(self)
-        map.locationManager.checkLocationServices()
-        mapElements.addUIButtons(self)
+//        view.addSubview(map)
+        view.addSubview(mapElements)
+        mapElements.addUIButtons()
         mapElements.mapDelegate = map
+        mapElements.addSubview(map)
+        
+        map.setupMapView()
+        map.locationManager.checkLocationServices()
+        
     }
 }
 

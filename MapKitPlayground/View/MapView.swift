@@ -14,19 +14,25 @@ class MapView: MKMapView, CLLocationManagerDelegate {
     
     var locationManager = LocationManager()
     
-    func setupMapView(_ vc: UIViewController) {
+    func setupMapView() {
+        
+        guard let parentView = self.superview else {fatalError("View not added")}
         
         self.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            self.topAnchor.constraint(equalTo: vc.view.topAnchor),
-            self.bottomAnchor.constraint(equalTo: vc.view.bottomAnchor),
-            self.leftAnchor.constraint(equalTo: vc.view.leftAnchor),
-            self.rightAnchor.constraint(equalTo: vc.view.rightAnchor)
+            self.topAnchor.constraint(equalTo: parentView.topAnchor),
+            self.bottomAnchor.constraint(equalTo: parentView.bottomAnchor),
+            self.leftAnchor.constraint(equalTo: parentView.leftAnchor),
+            self.rightAnchor.constraint(equalTo: parentView.rightAnchor)
         ])
         
         locationManager.delegate = self
         locationManager.mapDelegate = self
+        
+        
+//        self.addAnnotation(MapAnnotationModel(username: "Matheus Kulick", music: "Musica do metro", musicAuthor: "Metro Rio", coordinate: CLLocationCoordinate2D(latitude: -22.977092, longitude: -43.230457)))
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -41,7 +47,7 @@ class MapView: MKMapView, CLLocationManagerDelegate {
     }
         
     func setUpMapZoomLimits () {
-        let gaveaLocation = CLLocation(latitude: -22.977092, longitude: -43.230457)
+        let gaveaLocation = Locations.gavea.geoLocation
         let region = MKCoordinateRegion(
             center: gaveaLocation.coordinate,
             latitudinalMeters: 1000,

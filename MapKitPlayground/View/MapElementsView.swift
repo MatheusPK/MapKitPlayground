@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 
 
-class MapElementsView: UIViewController {
+class MapElementsView: UIView {
     
     var mapDelegate: MapView!
     
@@ -27,35 +27,55 @@ class MapElementsView: UIViewController {
     
     let annotationButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .green
-        button.setTitle("fazer marcacao", for: .normal)
+        button.backgroundColor = .white
+        button.imageView?.tintColor = .black
+        button.setImage(UIImage(systemName: "plus.circle"), for: .normal)
         return button
     }()
     
-    func addUIButtons(_ vc: UIViewController) {
+    func addUIButtons() {
         
-        vc.view.addSubview(myLocationButton)
-        vc.view.addSubview(annotationButton)
+        
+        guard let parentView = self.superview else {fatalError("View not added")}
+        
+        parentView.addSubview(myLocationButton)
+        parentView.addSubview(annotationButton)
+        
+        self.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            topAnchor.constraint(equalTo: parentView.topAnchor),
+            bottomAnchor.constraint(equalTo: parentView.bottomAnchor),
+            leftAnchor.constraint(equalTo: parentView.leftAnchor),
+            rightAnchor.constraint(equalTo: parentView.rightAnchor)
+        ])
         
         myLocationButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            myLocationButton.centerXAnchor.constraint(equalTo: vc.view.centerXAnchor),
-            myLocationButton.centerYAnchor.constraint(equalTo: vc.view.centerYAnchor, constant: 100)
+            myLocationButton.centerXAnchor.constraint(equalTo: parentView.centerXAnchor),
+            myLocationButton.centerYAnchor.constraint(equalTo: parentView.centerYAnchor, constant: 100)
         ])
         
         annotationButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            annotationButton.centerXAnchor.constraint(equalTo: vc.view.centerXAnchor),
-            annotationButton.centerYAnchor.constraint(equalTo: vc.view.centerYAnchor)
+            annotationButton.bottomAnchor.constraint(equalTo: parentView.bottomAnchor, constant: -100),
+            annotationButton.rightAnchor.constraint(equalTo: parentView.rightAnchor, constant: -100),
+            annotationButton.heightAnchor.constraint(equalToConstant: 40),
+            annotationButton.widthAnchor.constraint(equalToConstant: 40)
         ])
         
         myLocationButton.addTarget(self, action: #selector(goToMyLocation), for: .touchUpInside)
+        annotationButton.addTarget(self, action: #selector(addAnnotation), for: .touchUpInside)
+        
     }
     
     @objc func goToMyLocation() {
         guard let location = mapDelegate.locationManager.location else {return}
         let region = MKCoordinateRegion.init(center: location.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
         mapDelegate.setRegion(region, animated: true)
+    }
+    
+    @objc func addAnnotation() {
+        
     }
     
 }
