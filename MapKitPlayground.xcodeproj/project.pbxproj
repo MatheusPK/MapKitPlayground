@@ -16,7 +16,6 @@
 		8B2670072666C0CE005FFBB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B2670062666C0CE005FFBB0 /* Assets.xcassets */; };
 		8B2670152666C0CE005FFBB0 /* MapKitPlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2670142666C0CE005FFBB0 /* MapKitPlaygroundTests.swift */; };
 		8B2670202666C0CE005FFBB0 /* MapKitPlaygroundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B26701F2666C0CE005FFBB0 /* MapKitPlaygroundUITests.swift */; };
-		8B26702E26680613005FFBB0 /* FungoMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B26702D26680613005FFBB0 /* FungoMapView.swift */; };
 		8B7C1410267911C70037D9FD /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7C140F267911C70037D9FD /* MapModel.swift */; };
 		8B7C1413267914F70037D9FD /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7C1412267914F70037D9FD /* MapView.swift */; };
 		8B7C14182679222E0037D9FD /* MapElementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7C14172679222E0037D9FD /* MapElementsView.swift */; };
@@ -56,7 +55,6 @@
 		8B26701B2666C0CE005FFBB0 /* MapKitPlaygroundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapKitPlaygroundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B26701F2666C0CE005FFBB0 /* MapKitPlaygroundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitPlaygroundUITests.swift; sourceTree = "<group>"; };
 		8B2670212666C0CE005FFBB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8B26702D26680613005FFBB0 /* FungoMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FungoMapView.swift; sourceTree = "<group>"; };
 		8B7C140F267911C70037D9FD /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		8B7C1412267914F70037D9FD /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		8B7C14172679222E0037D9FD /* MapElementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapElementsView.swift; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 		8B7C140D267909640037D9FD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8B26702D26680613005FFBB0 /* FungoMapView.swift */,
 				8B7C1412267914F70037D9FD /* MapView.swift */,
 				8B7C14172679222E0037D9FD /* MapElementsView.swift */,
 				30B0414E26793B1800062C7B /* MapAnnotationView.swift */,
@@ -304,7 +301,6 @@
 				8B7C141A267981B50037D9FD /* LocationManager.swift in Sources */,
 				8B7C1410267911C70037D9FD /* MapModel.swift in Sources */,
 				30B0414D2679399800062C7B /* MapAnnotationModel.swift in Sources */,
-				8B26702E26680613005FFBB0 /* FungoMapView.swift in Sources */,
 				8B266FFE2666C0CB005FFBB0 /* AppDelegate.swift in Sources */,
 				8B7C14182679222E0037D9FD /* MapElementsView.swift in Sources */,
 				8B2670002666C0CB005FFBB0 /* SceneDelegate.swift in Sources */,
