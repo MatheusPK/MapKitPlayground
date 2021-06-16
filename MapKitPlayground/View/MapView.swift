@@ -29,10 +29,6 @@ class MapView: MKMapView, CLLocationManagerDelegate {
         
         locationManager.delegate = self
         locationManager.mapDelegate = self
-        
-        
-//        self.addAnnotation(MapAnnotationModel(username: "Matheus Kulick", music: "Musica do metro", musicAuthor: "Metro Rio", coordinate: CLLocationCoordinate2D(latitude: -22.977092, longitude: -43.230457)))
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

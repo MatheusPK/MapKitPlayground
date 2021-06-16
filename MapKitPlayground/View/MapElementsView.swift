@@ -75,7 +75,13 @@ class MapElementsView: UIView {
     }
     
     @objc func addAnnotation() {
+        var userLocation = mapDelegate.locationManager.location!.coordinate
         
+        mapDelegate.addAnnotation(MapAnnotationModel(
+                                    username: "Matheus Kulick",
+                                    music: "Musica do metro",
+                                    musicAuthor: "Metro Rio",
+                                    coordinate: userLocation))
     }
     
 }
