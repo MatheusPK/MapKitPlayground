@@ -7,35 +7,25 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class ViewController: UIViewController, MKMapViewDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
-    private var mapAnnotation: [MapAnnotationModel] = []
+    //private var mapAnnotation: [MapAnnotationModel] = []
     
-    let initialLocation = CLLocation(latitude: -22.97998, longitude: -43.23429)
+    //let initialLocation = CLLocation(latitude: -22.97998, longitude: -43.23429)
     
     var map = MapView()
-    
     var mapElements = MapElementsView()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addSubview(map)
-        
-        map.delegate = self
-        map.setupMapConstraints(self)
-        map.setUpMapZoomLimits()
-        map.centerToLocation(initialLocation)
+        map.setupMapView(self)
+        map.locationManager.checkLocationServices()
         mapElements.addUIButtons(self)
-        map.register(
-          MapAnnotationModel.self,
-          forAnnotationViewWithReuseIdentifier:
-            MKMapViewDefaultAnnotationViewReuseIdentifier)
-        
-        
-
-        // Do any additional setup after loading the view.
+        mapElements.mapDelegate = map
     }
 }
 

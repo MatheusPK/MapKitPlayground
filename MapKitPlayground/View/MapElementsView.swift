@@ -5,11 +5,13 @@
 //  Created by Matheus Kulick on 15/06/21.
 //
 
-import Foundation
 import UIKit
+import MapKit
 
 
 class MapElementsView: UIViewController {
+    
+    var mapDelegate: MapView!
     
     let myLocationButton: UIButton = {
         let button = UIButton()
@@ -47,6 +49,13 @@ class MapElementsView: UIViewController {
             annotationButton.centerYAnchor.constraint(equalTo: vc.view.centerYAnchor)
         ])
         
+        myLocationButton.addTarget(self, action: #selector(goToMyLocation), for: .touchUpInside)
+    }
+    
+    @objc func goToMyLocation() {
+        guard let location = mapDelegate.locationManager.location else {return}
+        let region = MKCoordinateRegion.init(center: location.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+        mapDelegate.setRegion(region, animated: true)
     }
     
 }

@@ -12,23 +12,40 @@ import CoreLocation
 
 class MapView: MKMapView, CLLocationManagerDelegate {
     
-    func setupMapConstraints(_ vc: UIViewController) {
+    var locationManager = LocationManager()
+    
+    func setupMapView(_ vc: UIViewController) {
+        
         self.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
-
             self.topAnchor.constraint(equalTo: vc.view.topAnchor),
             self.bottomAnchor.constraint(equalTo: vc.view.bottomAnchor),
             self.leftAnchor.constraint(equalTo: vc.view.leftAnchor),
             self.rightAnchor.constraint(equalTo: vc.view.rightAnchor)
         ])
+        
+        locationManager.delegate = self
+        locationManager.mapDelegate = self
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        let region = MKCoordinateRegion.init(center: location.coordinate, latitudinalMeters: 4000, longitudinalMeters: 4000)
+        setRegion(region, animated: true)
+        locationManager.stopUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        locationManager.checkLocationAuthorization()
+    }
+        
     func setUpMapZoomLimits () {
         let gaveaLocation = CLLocation(latitude: -22.977092, longitude: -43.230457)
         let region = MKCoordinateRegion(
             center: gaveaLocation.coordinate,
-        latitudinalMeters: 1000,
-        longitudinalMeters: 1000)
+            latitudinalMeters: 1000,
+            longitudinalMeters: 1000)
         self.setCameraBoundary(
             MKMapView.CameraBoundary(coordinateRegion: region),
             animated: true)
@@ -38,15 +55,4 @@ class MapView: MKMapView, CLLocationManagerDelegate {
         
         self.setCenter(CLLocationCoordinate2D(latitude: -22.977092, longitude: -43.230457), animated: true)
     }
-}
-
-private extension MKMapView {
-    
-    func centerToLocation(_ location: CLLocation, regionRadius: CLLocationDistance = 1000) {
-        
-        let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-        
-        setRegion(coordinateRegion, animated: true)
-    }
-    
 }

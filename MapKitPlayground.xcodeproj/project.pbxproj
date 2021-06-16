@@ -20,6 +20,7 @@
 		8B7C1410267911C70037D9FD /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7C140F267911C70037D9FD /* MapModel.swift */; };
 		8B7C1413267914F70037D9FD /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7C1412267914F70037D9FD /* MapView.swift */; };
 		8B7C14182679222E0037D9FD /* MapElementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7C14172679222E0037D9FD /* MapElementsView.swift */; };
+		8B7C141A267981B50037D9FD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7C1419267981B50037D9FD /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		8B7C140F267911C70037D9FD /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		8B7C1412267914F70037D9FD /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		8B7C14172679222E0037D9FD /* MapElementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapElementsView.swift; sourceTree = "<group>"; };
+		8B7C1419267981B50037D9FD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			children = (
 				8B7C140F267911C70037D9FD /* MapModel.swift */,
 				30B0414C2679399800062C7B /* MapAnnotationModel.swift */,
+				8B7C1419267981B50037D9FD /* LocationManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			files = (
 				8B2670022666C0CB005FFBB0 /* ViewController.swift in Sources */,
 				8B7C1413267914F70037D9FD /* MapView.swift in Sources */,
+				8B7C141A267981B50037D9FD /* LocationManager.swift in Sources */,
 				8B7C1410267911C70037D9FD /* MapModel.swift in Sources */,
 				30B0414D2679399800062C7B /* MapAnnotationModel.swift in Sources */,
 				8B26702E26680613005FFBB0 /* FungoMapView.swift in Sources */,
