@@ -58,3 +58,14 @@ class MapView: MKMapView, CLLocationManagerDelegate {
         self.setCenter(CLLocationCoordinate2D(latitude: -22.977092, longitude: -43.230457), animated: true)
     }
 }
+extension ViewController: MKMapViewDelegate {
+
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        guard let mapAnotation = view.annotation as? MapAnnotationModel
+        
+        else {
+            return
+        }
+    }
+}
